@@ -11,3 +11,4 @@ const changeAnimationTime = () => {
 };
  
 setInterval(changeAnimationTime, 1000);
+document.addEventListener('contextmenu', event => event.preventDefault());
