@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="module" src="/firebase.js"></script>
+    <title>Note App</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">App Note - Coder Trần Hiếu</h2>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+
+              <th scope="col">
+                <label class="control control--checkbox">
+                  <input type="checkbox"  class="js-check-all"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+              
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr scope="row">
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+              <td>
+                1392
+              </td>
+              <td><a href="#">James Yates</a></td>
+              <td>
+                Web Designer
+                
+              </td>
+              <td>+63 983 0962 971</td>
+              <td style="width:10%;"><button type="button" class="btn btn-outline-warning" id="editer" style ="width: 100%;">Edit</button></td>
+            </tr>
+            
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+              </th> -->
+          </tbody>
+          
+        </table>
+
+        <div>
+        <td>
+          <button type="button" class="btn btn-outline-danger" style="width: 100%; height: 100%;" id="add-note">Add Note</button>
+        </td>
+      </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+    
+
+  <!-- Form Add Note -->
+    
+  <div class="col-md-4 col-md-offset-4" id="popup" style="display: none;">
+        <form>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+              <input type="text" class="form-control" placeholder="ID" name="id">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+              <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+              <input type="text" class="form-control" placeholder="Description" name="description">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+              <input type="text" class="form-control" placeholder="Status" name="status">
+            </div>
+          </div>
+            <button type="submit" class="btn btn-success btn-block">Add</button>
+        </form>
+  </div>
+
+<br>
+<br>
+
+
+<!-- Form Edit Note -->
+
+  <div class="col-md-4 col-md-offset-4" id="popup-01" style="display: none;">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+          <input type="text" class="form-control" placeholder="ID" name="id">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+          <input type="text" class="form-control" placeholder="Name" name="name">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+          <input type="text" class="form-control" placeholder="Description" name="description">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+          <input type="text" class="form-control" placeholder="Status" name="status">
+        </div>
+      </div>
+        <button type="submit" class="btn btn-success btn-block" id="submit-update">Edit</button>
+    </form>
+</div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
