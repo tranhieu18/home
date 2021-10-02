@@ -1,172 +1,40 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Trần Hiếu</title>
+    <meta property="og:type" content="website">
+    <meta name="description" content="Coder TranHieu">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Features-Blue.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/firebase.js" type="module"></script>
+</head>
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <script type="module" src="/note/firebase.js"></script>
-    <title>Note App</title>
-  </head>
-  <body>
-  
-
-  <div class="content">
-    
-    <div class="container">
-      <h2 class="mb-5">App Note - Coder Trần Hiếu</h2>
-      
-
-      <div class="table-responsive custom-table-responsive">
-
-        <table class="table custom-table">
-          <thead>
-            <tr>  
-
-              <th scope="col">
-                <label class="control control--checkbox">
-                  <input type="checkbox"  class="js-check-all"/>
-                  <div class="control__indicator"></div>
-                </label>
-              </th>
-              
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Status</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr scope="row">
-              <th scope="row">
-                <label class="control control--checkbox">
-                  <input type="checkbox"/>
-                  <div class="control__indicator"></div>
-                </label>
-              </th>
-              <td>
-                1392
-              </td>
-              <td><a href="#">James Yates</a></td>
-              <td>
-                Web Designer
-                
-              </td>
-              <td>+63 983 0962 971</td>
-              <td style="width:10%;"><button type="button" class="btn btn-outline-warning" id="editer" style ="width: 100%;">Edit</button></td>
-            </tr>
-            
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>
-              <th scope="row">
-                <label class="control control--checkbox">
-                  <input type="checkbox"/>
-                  <div class="control__indicator"></div>
-                </label>
-              </th>
-              </th> -->
-          </tbody>
-          
-        </table>
-
-        <div>
-        <td>
-          <button type="button" class="btn btn-outline-danger" style="width: 100%; height: 100%;" id="add-note">Add Note</button>
-        </td>
-      </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-    
-
-  <!-- Form Add Note -->
-    
-  <div class="col-md-4 col-md-offset-4" id="popup" style="display: none;">
-        <form>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-              <input type="text" class="form-control" placeholder="ID" name="id">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-              <input type="text" class="form-control" placeholder="Name" name="name">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-              <input type="text" class="form-control" placeholder="Description" name="description">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-              <input type="text" class="form-control" placeholder="Status" name="status">
-            </div>
-          </div>
-            <button type="submit" class="btn btn-success btn-block">Add</button>
-        </form>
-  </div>
-
-<br>
-<br>
-
-
-<!-- Form Edit Note -->
-
-  <div class="col-md-4 col-md-offset-4" id="popup-01" style="display: none;">
+<body style="background: linear-gradient(to right, #654ea3, #eaafc8);background-attachment: fixed;"><div class="contact-clean">
     <form>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-          <input type="text" class="form-control" placeholder="ID" name="id">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-          <input type="text" class="form-control" placeholder="Name" name="name">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-          <input type="text" class="form-control" placeholder="Description" name="description">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-          <input type="text" class="form-control" placeholder="Status" name="status">
-        </div>
-      </div>
-        <button type="submit" class="btn btn-success btn-block" id="submit-update">Edit</button>
+        <h2 class="text-center">NOTE APP</h2>
+        <div class="mb-3"><input type="text" class="form-control" id="note-name" placeholder="Note" /></div>
+        <div class="show-listnote"></div>
+
+        <!-- // <input type="text" class="form-control" readonly style="width: 345px;" /><i class="fa fa-remove " role="button"></i> -->
+        <div class="mb-3"><button class="btn btn-primary" style="text-align: center;" id="add-note" onclick="return false">ADD</button><button class="btn btn-primary" style="margin-left: 8px;" onclick="return false" id="clean-note">CLEAN</button></div>
     </form>
 </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
 
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
 </html>
+
+
+<!-- onclick="return false" Click button not refesh page -->
