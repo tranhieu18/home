@@ -35,3 +35,8 @@ a {
 th {
     font-size: 20px;
 }
+
+#count {
+    font-size: 18px;
+    color: rgb(25, 0, 255);
+}

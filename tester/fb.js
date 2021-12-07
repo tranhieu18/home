@@ -39,24 +39,9 @@ let tableBody = document.querySelector("tbody")
       names: names,
       phone: phone
     });
-    //   alert("Đã Thêm Vào Danh Bạ.")
+      alert("Đã Thêm Vào Danh Bạ.")
       
   }
-
-  // function writeUserData(names, phone) {
-  //   let userId = push(child(usersRef)).key;
-  //   console.log(userId)
-  //   child(userId).set({
-  //     names: names,
-  //     phone: phone
-  //   }).then((onFullFilled)=>{
-  //     console.log("writed");
-  //   }, (onRejected) => {
-  //     console.log(onRejected);
-  //   })
-  // }
-
-  //   writeUserData("abc","cdd")
 
   //Insert Data Form Table
 
@@ -72,9 +57,9 @@ onValue(starCountRef, (snapshot) => {
         let tr = `
   <tbody>
   <tr>
-    <th scope="row">${dulieu.val().names}</th>
+    <th scope="row" readonly = "True">${dulieu.val().names}</th>
     <td><a href="tel: ${dulieu.val().phone}"</a>${dulieu.val().phone}</td>
-    <td><button data-id='${dulieu.key}' type="button" class="btn btn-danger" id="remove">Xóa</button></td>
+    <td><button data-id='${dulieu.key}' type="button" class="btn btn-danger" id="remove" disabled>Xóa</button></td>
 
   </tr>
 </tbody>
@@ -82,20 +67,28 @@ onValue(starCountRef, (snapshot) => {
     tableBody.innerHTML+= tr // Cập Nhập Bảng
 
   
-  // console.log(btnDelete)
-  // btnDelete.addEventListener('click', () => {
-  //   console.log('user deleted');
-  // })
 
   })
+
+
 
 
 // -----------------------------------------------------------
   //Remove Bản Chuẩn
   const btnDelete = document.querySelectorAll("#remove");
+  const logger = document.getElementById("count");
+  const countUsers = 1+btnDelete.length
+  console.log("Số Người Trong Danh Bạ: "+countUsers)
+  logger.innerHTML = ""
+  let td = `
+    <div id="count">Số Người Trong Danh Bạ: ${countUsers}</div>
+  `
+  logger.innerHTML += td //Count Users List
+  
   // const getValue = ref(db, 'phonebook/');
   btnDelete.forEach(element => {
     element.addEventListener('click', () => {
+      confirm("Bạn Thật Sự Muốn Xóa?");
       const div1 = element.getAttribute("data-id")
       const getValue = ref(db, 'phonebook/' + div1);
       // console.log(div1)
@@ -125,13 +118,5 @@ onValue(starCountRef, (snapshot) => {
 });
 
 //Delete
-
-
-// removeBtn.addEventListener("click", (e) =>{
-//     e.preventDefault();
-
-//     remove(ref(db, 'phonebook/' + data-id.value))
-// })
-
 
 
