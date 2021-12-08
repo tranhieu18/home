@@ -40,3 +40,13 @@ th {
     font-size: 18px;
     color: rgb(25, 0, 255);
 }
+
+#fPassword {
+    display: none;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    /* align-items: center; */
+    align-content: center;
+    margin: 0 auto;
+}

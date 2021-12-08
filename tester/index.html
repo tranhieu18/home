@@ -10,7 +10,19 @@
     <title>Phone Book</title>
 </head>
 <body>
+
+  <p id="ip"></p>
     <h1>Phone Book</h1>
+
+    <!-- Admin Page -->
+    <form id="fPassword" class="border border-secondary rounded p-3 mb-2 bg-light text-white">
+        <div class="mb-3">
+          <input type="password" class="form-control border border-secondary" id="valuePass" maxlength="10" >
+        </div>
+        <button type="button" id="truycap" class="btn btn-dark">Truy Cập</button>
+      </form>
+
+    <!-- Body -->
     <form id="phone-book" class="border border-secondary rounded p-3 mb-2 bg-light text-white">
         <h2 style="color: black;">List Phone User</h2>
         <div class="input-group mb-3">
@@ -57,6 +69,25 @@
 }
 
     </script>
+     <script src=
+     "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+         </script>
+          
+           <script>
+          
+         /* Add "https://api.ipify.org?format=json" statement
+                    this will communicate with the ipify servers in
+                    order to retrieve the IP address $.getJSON will
+                    load JSON-encoded data from the server using a
+                    GET HTTP request */
+                     
+         $.getJSON("https://api.ipify.org?format=json", function(data) {
+              
+             // Setting text of element P with id gfg
+             $("#ip").html("Địa Chỉ IP Đang Truy Cập: "+ data.ip);
+         })
+         </script>
+         
     <script type="module" src="fb.js"></script>
 </body>
 </html>

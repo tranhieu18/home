@@ -20,8 +20,6 @@
   const app = initializeApp(firebaseConfig);
   const db = getDatabase();
 
-
-
   //Read data Form insert Firebsae.
 var names, phone, dataid;
 
@@ -33,6 +31,9 @@ let tableBody = document.querySelector("tbody")
 
   document.getElementById("submit").onclick = function() {
       ReadData()
+      if((names && phone) == "") {
+        alert("Vui Lòng Điền Đầy Đủ Thông Tin.")
+      } else {
       const db = getDatabase(); 
       const newPostKey = push(child(ref(db), 'phonebook/')).key; //Tạo data-id random
       set(ref(db, 'phonebook/' + newPostKey), {
@@ -40,14 +41,10 @@ let tableBody = document.querySelector("tbody")
       phone: phone
     });
       alert("Đã Thêm Vào Danh Bạ.")
-      
+  }
   }
 
   //Insert Data Form Table
-
- 
-
-  
 const starCountRef = ref(db, 'phonebook/');
 onValue(starCountRef, (snapshot) => {
   tableBody.innerHTML = "" // Cập Nhập Bảng
@@ -65,13 +62,7 @@ onValue(starCountRef, (snapshot) => {
 </tbody>
   `
     tableBody.innerHTML+= tr // Cập Nhập Bảng
-
-  
-
   })
-
-
-
 
 // -----------------------------------------------------------
   //Remove Bản Chuẩn
@@ -82,6 +73,7 @@ onValue(starCountRef, (snapshot) => {
   logger.innerHTML = ""
   let td = `
     <div id="count">Số Người Trong Danh Bạ: ${countUsers}</div>
+    <button class="btn btn-outline-warning rounded-0" id="admin" style="color: black">PROTECTED</button>
   `
   logger.innerHTML += td //Count Users List
   
@@ -113,10 +105,32 @@ onValue(starCountRef, (snapshot) => {
 
   })
   // ----------------------------------------------------------------
+  const btnPass = document.getElementById("admin")
+  const formPass = document.getElementById("fPassword")
+ 
+  btnPass.addEventListener("click", () =>{
+    formPass.style.display = "flex";
+    alert("Success")
+  })
+  
+  function adminPage() {
+    const getFormPass = document.getElementById("valuePass").value
+    console.log(getFormPass)
 
-//   console.log(remove_users)
+    if(getFormPass === "12321"){
+      
+      alert("Đã Truy Cập Vào Hệ Thống.")
+      btnDelete.forEach(element2 => {
+        element2.removeAttribute("disabled")
+        formPass.style.display = "none";
+      })
+    } else {
+      alert("Truy Cập Thất Bại.")
+    }
+  }
+
+  document.getElementById("truycap").onclick = function() {
+    adminPage()
+}
+
 });
-
-//Delete
-
-
