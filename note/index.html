@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Trần Hiếu</title>
-    <link rel="icon" type="image/x-icon" href="icon.ico">
     <meta property="og:type" content="website">
     <meta name="description" content="Coder TranHieu">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -21,8 +20,8 @@
     <script src="assets/js/firebase.js" type="module"></script>
 </head>
 
-<body style="background: linear-gradient(to right, #654ea3, #eaafc8);background-attachment: fixed;"><div class="contact-clean">
-    <form>
+<body style="background: linear-gradient(to right, #48c6ef, #6f86d6);background-attachment: fixed;"><div class="contact-clean">
+    <form class="formNote" id="box">
         <h2 class="text-center">NOTE APP</h2>
         <div class="mb-3"><input type="text" class="form-control" id="note-name" placeholder="Note" /></div>
         <div class="show-listnote"></div>
@@ -33,20 +32,11 @@
 </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-  // Initialize the agent at application startup.
-  const fpPromise = import('https://fpcdn.io/v3/ofibrkOL9XWaBKYSAdHQ')
-    .then(FingerprintJS => FingerprintJS.load())
-
-  // Get the visitor identifier when you need it.
-  fpPromise
-    .then(fp => fp.get())
-    .then(result => {
-      // This is the visitor identifier:
-      const visitorId = result.visitorId
-      console.log(visitorId)
-    })
-</script>
+    <script language="JavaScript">
+        if (top.location != self.location)
+        {top.location = self.location}
+    </script>
+    <NOSCRIPT><IFRAME SRC=*.jpg></IFRAME></NOSCRIPT>
 </body>
 
 </html>
